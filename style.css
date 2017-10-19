@@ -1,0 +1,338 @@
+body {
+    background-color: black;
+    width: 100%;
+    height: 750px;
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+#ending {
+    display: none;
+    position: absolute;
+    /*margin-top: 10px;*/
+    bottom: 15vh;
+}
+
+#ending:hover{
+    cursor: pointer;
+}
+
+img#confused {
+    width: 30px;
+    padding-left: 55px;
+    margin-top: -100px;
+    display: none;
+}
+
+#upgrade-box {
+    background-color: #E6E7E8;
+    margin-left: 450px;
+    height: 530px;
+    width: 580px;
+    position:absolute;
+    z-index: 1;
+    border-radius: 30px;
+    bottom:15vh;
+}
+
+#choose-upgrade {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-color: #2E76FC;
+    color: white;
+    text-align: center;
+    height: 80px;
+    font-size: 2em;
+
+}
+
+#upgrade-span {
+    vertical-align: -20px;
+}
+
+#upgrade-ok:hover{
+    cursor: pointer;
+}
+
+.upgrade {
+    height: 200px;
+    width: 200px;
+    margin-top: 40px;
+}
+
+.upgrade:hover{
+    cursor: pointer;
+}
+
+#shield {
+    margin-left: 70px;
+}
+
+#drill {
+    margin-right: 70px;
+}
+
+#shield-select {
+    margin-left: 70px;
+}
+
+#drill-select {
+    margin-right: 70px;
+}
+
+.effect {
+    color: #6D6E71;
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+}
+
+#upgrade-ok {
+    background-color: #00A651;
+    height: 30px;
+    margin-left: 220px;
+    margin-right:220px;
+    margin-top: 90px;
+    border-radius:20px;
+    color: white;
+    text-align: center;
+}
+
+#upgrade-ok-span {
+    vertical-align: -5px;
+}
+
+.menu_options{
+    border: 2px solid #a1a1a1;
+    border-style: dotted;
+    padding: 20px 10px; 
+    width: 355px;
+    height: 100px;
+    border-radius: 40px;
+}
+
+.popup{
+    width: 400px;
+    height: 300px;
+
+    display: none;
+    position: absolute;
+    outline:0;
+    /*background-color: rgba(65, 64, 66, 0.7);*/
+}
+
+.popup1{
+    width: 400px;
+    height: 300px;
+
+    display: none;
+    position: absolute;
+    outline:0;
+    /*background-color: rgba(65, 64, 66, 0.7);*/
+}
+
+.popup2{
+    width: 400px;
+    height: 300px;
+    margin-left:450px;
+    margin-top:120px;
+    display: none;
+    position: absolute;
+    outline:0;
+    /*background-color: rgba(65, 64, 66, 0.7);*/
+}
+
+.box{
+    border: 1px solid red;
+    margin-left: 100px;
+    position: relative;
+
+}
+
+.options_group {
+    display: flex;
+}
+
+#container {
+    border: 1px solid transparent;
+    height: 150px;
+}
+
+H1 {
+    float: left;
+    color: white;
+    margin-top: 4.2vh;
+    margin-left: 5vw;
+}
+
+H1:hover{
+    cursor: pointer;
+}
+
+.mode{
+
+    height: 40px;
+    width: 160px;
+    float: right;
+    font-size: 1em;
+    color: white;
+    text-align: center;
+    margin-top: 6.5vh;
+}
+
+.mode:hover{
+    cursor: pointer;
+}
+
+#campaign {
+    color: #FF6C00;
+}
+
+#status {
+    margin-top: 3.2vh;
+    height: 10vh;
+}
+
+
+#planets {
+    float: right;
+    margin-top: 5vh;
+    margin-right: 5vh;
+}
+
+.text {
+    font-size: 1.2em;
+    color: white;
+    text-align: center;
+}
+
+/* The side navigation menu */
+.open_nav_bar{
+	width: 89px;
+	height: 50px;
+	/*background-color: white;*/
+	position: absolute;
+    bottom: 5vh;
+	/*margin-top: 30%;*/
+}
+
+.open_nav_bar:hover{
+    cursor: pointer;
+}
+
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: rgba(65, 64, 66, 0.7); /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+
+}
+#nav_options_all{
+	padding-left: 30%;
+	padding-top: 15%;
+}
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+/* Summer Shi */
+.ball {
+    top: 300px;
+    left:80px;
+    height: 50px;
+
+
+    animation: bounce 0.8s infinite alternate;
+    -webkit-animation: bounce 1.0s infinite alternate;
+    position:absolute;
+}
+@keyframes bounce {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-18px);
+    }
+}
+@-webkit-keyframes bounce {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-18px);
+    }
+}
+
+#baby_ship{
+
+}
+
+.ball1 {
+
+    background-image: url("assets/wingman01.png");
+    background-size: 100% 100%;
+    top: 380px;
+    left: 60px;
+    height: 45px;
+    width: 70px;
+ 
+
+
+    animation: bounce 0.6s infinite alternate;
+    -webkit-animation: bounce 0.6s infinite alternate;
+    position:absolute;
+}
+
+@keyframes1 bounce {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-18px);
+    }
+}
+@-webkit-keyframes1 bounce {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-18px);
+    }
+}
