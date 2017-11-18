@@ -1,122 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Halite Junior</title>
-    <link rel = "stylesheet" type = "text/css" href = "style_level1.css" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <style>
-
-        .tooltip {
-            position: relative;
-            display: inline-block;
-            border-bottom: 1px dotted black;
-        }
-
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            border-radius: 6px;
-            padding: 5px 0;
-
-            /* Position the tooltip */
-            position: absolute;
-            z-index: 1;
-            top: -100px;
-            left: 0px;
-        }
-
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-        }
-
-        #popup6{
-            height: 150px;
-            width: 100%;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            background-color: rgb(209,211,212);
-            margin-left:0px;
-            display: none;
-        }
-
-        #div4,#div5,#div6{
-            padding: 0px;
-            border-radius: 90px;
-            display: inline-block;
-            border-color: black;
-            height:90px;
-            width:90px;
-            margin-left:30px; margin-top:0px;
-            position:absolute;
-
-        }
-
-        #div1{
-
-            padding: 0px;
-            border-radius: 90px;
-            display: inline-block;
-            border-color: black;
-            background-size: 100% 100%;
-            background-image: url("level1/1.png");
-            height:90px;
-            width:90px;
-            margin-top:10px;
-            /*position:absolute;*/
-        }
-
-        #div2{
-
-            padding: 0px;
-            border-radius: 90px;
-            display: inline-block;
-            border-color: black;
-            background-size: 100% 100%;
-            background-image: url("level1/2.png");
-            height:90px;
-            width:90px;
-            /*position:absolute;*/
-            margin-top:10px;
-        }
-
-        #div3{
-
-            padding: 0px;
-            border-radius: 90px;
-            display: inline-block;
-            border-color: black;
-            background-size: 100% 100%;
-            background-image: url("level1/3.png");
-            height:90px;
-            width:90px;
-
-            /*position:absolute;*/
-            margin-top:10px;
-        }
-    </style>
-    <script>
-        function allowDrop(ev) {
-            ev.preventDefault();
-        }
-
-        function drag(ev) {
-            ev.dataTransfer.setData("text", ev.target.id);
-        }
-
-        function drop(ev) {
-            ev.preventDefault();
-            var data = ev.dataTransfer.getData("text");
-            ev.target.appendChild(document.getElementById(data));
-        }
-    </script>
-
+<title>Halite Junior</title>
+<link rel = "stylesheet" type = "text/css" href = "style.css" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 
 <body background="assets/spacebg.png" style="background-size: 100%">
-
 
 <div id="container">
 
@@ -127,7 +19,7 @@
         </div>
     </div>
 
-    <h1><img src="assets/halitejr.png" style="height:40px"></h1>
+    <h1><img src="HOMEBOUND_LARGE.png" style="height:40px"></h1>
     <div id="modes">
         <div class="mode" id="practice" style="margin-right:37px">PRACTICE FIELD</div>
         <div class="mode" id="combat">COMBAT</div>
@@ -137,14 +29,14 @@
     <div id="status">
 
         <div id="life-engine" style="width: 100px; float:left">
-            <div id="shipname"><img src="level1/shipname.png" style="margin-left: 5vw; margin-top: 1vw"></div>
-            <div id="life"><img src="level1/life6.png" alt="Life" style="margin-left:5vw; margin-top: 1vw"></div>
+            <div id="shipname"><img src="level1/shipname.png" id="shipname_image" style="margin-left: 5vw; margin-top: 1vw"></div>
+            <div id="life"><img src="level1/life6.png" alt="Life" id = "health_bar_image" style="margin-left:5vw; margin-top: 1vw"></div>
         </div>
 
 
         <div id="upgrade-icon"></div>
 
-        <div class="text" id="mission" style="margin-right:50px;float:right">MISSION 002</div>
+        <div class="text" id="mission" style="margin-right:50px;float:right">MISSION 001</div>
 
     </div>
 
@@ -162,15 +54,22 @@
 
 
     <div id="planets">
-        <img id="planet1" src="level1/planet4heart.png" style="margin-left:20px; margin-bottom:340px; height:120px">
-        <img id="planet2" src="level1/planet2heart.png" style="margin-left:80px; margin-bottom:30px">
-        <img id="planet3" src="level1/planet5heart.png" style="margin-left:100px; margin-bottom:260px">
+        <img id="planet1" src="level1/planet4heart.png">
+        <img id="planet2" src="level1/planet2heart.png">
+        <img id="planet3" src="level1/planet5heart.png">
     </div>
 </div>
 
+<div id="task-box">
+    <img id = "task" src="level1/mission2-task.png" onclick="beginMission()">
+</div>
+
+<div id="warning-box">
+    <img id = "warning" src="level1/level-warning.png" onclick="hideWarning()">
+</div>
 
 <div>
-    <img id="instruction2" src="level1/instruction.png" style="display:none;position:absolute;left:0;top:500px">
+    <img id="instruction2" src="level1/instruction.png" style="display:none;position:absolute;left:0;bottom: 160px">
 </div>
 
 <div id="popup6">
@@ -214,16 +113,15 @@
         <img id="drag3" src="level1/planet5drag.png" draggable="true" ondragstart="drag(event)" style="margin-left:-10px; margin-top:0px">
     </div>
 
-    <div id="div7" style="margin-left:540px;margin-top:50px;float:left;">
+    <div id="div7" style="margin-left:500px;margin-top:55px;float:left;">
         <img id="nike" src="assets_customized/valid_icon.png" style="display:inline-block;" onclick="rere()">
     </div>
 
 </div>
 
-<div id="ending" onclick="reload()">
+<div id="ending"></div>
 
-</div>
-<script src="script_level1.js"></script>
+<script src="myscripts.js"></script>
 
 </body>
 </html>
