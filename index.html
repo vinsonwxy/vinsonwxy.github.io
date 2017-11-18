@@ -1,24 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Halite Junior</title>
-<link rel = "stylesheet" type = "text/css" href = "style.css" />
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Halite Junior</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+        .input {
+            width: 300px;
+            height: 30px;
+            border-radius: 15px;
+            border: solid;
+            border-color: white;
+            display: block;
+            margin: auto;
+        }
+        #start {
+            /*height: 30px;*/
+            /*width: 125px;*/
+            border-radius:20px;
+            color: white;
+            text-align: center;
+            display: block;
+            margin: auto;
+        }
+        #choose_button {
+            width: 344px;
+            margin-top: 35px;
+        }
+        body {
+            background-color: black;
+            width: 100%;
+            height: 750px;
+            margin: 0px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        #header {
+            border: 1px solid transparent;
+            height: 150px;
+        }
+        H1 {
+            float: left;
+            color: white;
+            margin-top: 4.2vh;
+            margin-left: 5vw;
+        }
+        H1:hover{
+            cursor: pointer;
+        }
+        .mode{
+            height: 40px;
+            width: 160px;
+            float: right;
+            font-size: 1em;
+            color: white;
+            text-align: center;
+            margin-top: 6.5vh;
+        }
+        .mode:hover{
+            cursor: pointer;
+        }
+        #campaign {
+            color: #FF6C00;
+        }
+        .text {
+            font-size: 1.2em;
+            color: white;
+            text-align: center;
+        }
+        input[type='text'] {
+            font-size: 1.0em;
+            font-family: 'Montserrat', sans-serif;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        input[type='password'] {
+            font-size: 1.0em;
+            font-family: 'Montserrat', sans-serif;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    </style>
 </head>
 
 
-<body background="assets/spacebg.png" style="background-size: 100%">
-
-<div id="container">
-
-
-    <div class = "open_nav_bar" onclick="openNav()">
-        <div class="tooltip"><img src="assets/setting_icon01.png" id="nav">
-            <span id="hover" class="tooltiptext"><img src="level1/instruction-hover.png"></span>
-        </div>
-    </div>
-
+<body background="welcomepage.png" style="background-size: 101%">
+<div id="header">
     <h1><img src="HOMEBOUND_LARGE.png" style="height:40px"></h1>
     <div id="modes">
         <div class="mode" id="practice" style="margin-right:37px">PRACTICE FIELD</div>
@@ -26,102 +93,17 @@
         <div class="mode" id="campaign">PILOT MISSIONS</div>
     </div>
     <div id="line" style="margin-top: 12vh; margin-bottom: 0 ; margin-left: 5vw; margin-right: 3vw; border-top: 1px solid #FFD800"></div>
-    <div id="status">
-
-        <div id="life-engine" style="width: 100px; float:left">
-            <div id="shipname"><img src="level1/shipname.png" id="shipname_image" style="margin-left: 5vw; margin-top: 1vw"></div>
-            <div id="life"><img src="level1/life6.png" alt="Life" id = "health_bar_image" style="margin-left:5vw; margin-top: 1vw"></div>
-        </div>
-
-
-        <div id="upgrade-icon"></div>
-
-        <div class="text" id="mission" style="margin-right:50px;float:right">MISSION 001</div>
-
-    </div>
-
-    <div id="ships">
-        <div id="ship">
-            <img src="assets/ship01.png" onclick="myMove()" id = "mother_ship" class = "ball" alt="Ship">
-        </div>
-        <div id = "baby_ship_size">
-            <div id = "baby_ship" class = "ball1">
-                <img src="assets/confused.png" id = "confused">
-            </div>
-        </div>
-    </div>
-
-
-
-    <div id="planets">
-        <img id="planet1" src="level1/planet4heart.png">
-        <img id="planet2" src="level1/planet2heart.png">
-        <img id="planet3" src="level1/planet5heart.png">
-    </div>
 </div>
 
-<div id="task-box">
-    <img id = "task" src="level1/mission2-task.png" onclick="beginMission()">
+<div id="id">
+    <input type="text" placeholder="Astronaut Name" id="input_id" class="input" style="margin-top:250px">
 </div>
-
-<div id="warning-box">
-    <img id = "warning" src="level1/level-warning.png" onclick="hideWarning()">
+<div id="passcode">
+    <input type="password" placeholder="Passcode" id="input_passcode" class="input" style="margin-top:15px">
 </div>
-
-<div>
-    <img id="instruction2" src="level1/instruction.png" style="display:none;position:absolute;left:0;bottom: 160px">
+<div id="passcode2">
+    <input type="password" placeholder="Verify Passcode" id="input_passcode2" class="input" style="margin-top:15px">
 </div>
-
-<div id="popup6">
-
-    <div id="div0" style="margin-left:40px;margin-top:47px;float:left;" onclick="closeNav()">
-        <img id="button" src="assets/setting_icon02.png" style="display:inline-block;">
-    </div>
-
-    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin-left:45px;margin-top:25px;height:90px;float:left;">
-
-    </div>
-
-
-    <div style="margin-top:50px;display:inline-block;float:left;">
-        <img id="line1" src="level1/arrow-black.png" style="display:inline-block;">
-    </div>
-
-
-    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin-left:0px;margin-top:25px;height:90px;float:left;">
-
-    </div>
-
-
-    <a style="margin-top:50px;float:left;">
-        <img id="line2" src="level1/arrow-black.png" >
-    </a>
-
-    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin-left:0px;margin-top:25px;height:90px;float:left;">
-
-    </div>
-
-    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin-left:60px;margin-top:30px;height:90px;float:left;">
-        <img id="drag1" src="level1/planet4drag.png" draggable="true" ondragstart="drag(event)" style="margin-left:-33px; margin-top:-10px">
-    </div>
-
-    <div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin-left:220px;margin-top:25px;height:90px;float:left;">
-        <img id="drag2" src="level1/planet2drag.png" draggable="true" ondragstart="drag(event)" style="margin-left:-17px; margin-top:0px">
-    </div>
-
-    <div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin-left:360px;margin-top:25px;height:90px;float:left;">
-        <img id="drag3" src="level1/planet5drag.png" draggable="true" ondragstart="drag(event)" style="margin-left:-10px; margin-top:0px">
-    </div>
-
-    <div id="div7" style="margin-left:500px;margin-top:55px;float:left;">
-        <img id="nike" src="assets_customized/valid_icon.png" style="display:inline-block;" onclick="rere()">
-    </div>
-
-</div>
-
-<div id="ending"></div>
-
-<script src="myscripts.js"></script>
-
+<div id="start"><a href="character.html"><img src="start_journey.png" id="choose_button"></a></div>
 </body>
 </html>
