@@ -1,0 +1,129 @@
+body {
+    background-color: black;
+    width: 100%;
+    height: 750px;
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#header {
+    border: 1px solid transparent;
+    height: 150px;
+}
+
+H1 {
+    float: left;
+    color: white;
+    margin-top: 4.2vh;
+    margin-left: 5vw;
+}
+
+H1:hover{
+    cursor: pointer;
+}
+
+.mode{
+
+    height: 40px;
+    width: 160px;
+    float: right;
+    font-size: 1em;
+    color: white;
+    text-align: center;
+    margin-top: 6.5vh;
+}
+
+.mode:hover{
+    cursor: pointer;
+}
+
+#campaign {
+    color: #FF6C00;
+}
+
+.text {
+    font-size: 1.2em;
+    color: white;
+    text-align: center;
+}
+
+#choose {
+    margin-top: 30px;
+}
+
+#choose_button {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+}
+
+.center {
+    display: block;
+    margin: auto;
+}
+
+#ship_name {
+    margin-top: 100px;
+}
+
+#input_name {
+    width: 300px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+#spaceships {
+    margin-top: 80px;
+}
+
+.ship {
+    margin-left: 120px;
+    display: inline-block;
+    height: 227px;
+
+}
+
+.ship:hover{
+    cursor: pointer;
+}
+
+.ship_img {
+    margin: 0 auto;
+    display: block;
+}
+
+#ring1 {
+    display: none;
+    position: absolute;
+    left: 145px;
+    top: 300px;
+}
+
+#ring2 {
+    display: none;
+    position: absolute;
+    left: 490px;
+    top: 300px;
+}
+
+#ring3 {
+    display: none;
+    position: absolute;
+    left: 830px;
+    top: 300px;
+}
+
+#ring4 {
+    display: none;
+    position: absolute;
+    left: 1175px;
+    top: 300px;
+}
+
+input[type='text'] {
+    font-size: 1.0em;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 20px;
+    border: solid;
+    border-color: white;
+}

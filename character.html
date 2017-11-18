@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Halite Junior</title>
+    <link rel = "stylesheet" type = "text/css" href = "style_character.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+
+<body background="assets/spacebg.png">
+<div id="header">
+    <h1><img src="HOMEBOUND_LARGE.png" style="height:40px"></h1>
+    <div id="modes">
+        <div class="mode" id="practice" style="margin-right:37px">PRACTICE FIELD</div>
+        <div class="mode" id="combat">COMBAT</div>
+        <div class="mode" id="campaign">PILOT MISSIONS</div>
+    </div>
+    <div id="line" style="margin-top: 12vh; margin-bottom: 0 ; margin-left: 5vw; margin-right: 3vw; border-top: 1px solid #FFD800"></div>
+</div>
+
+<p class="text">First choose your spaceship!</p>
+
+<div id="spaceships" class="center">
+    <div id="ship01" class="ship" onclick="choose_ship01()"><img src="assets_customized/ship01.png" class="ship_img">
+        <img src="assets_customized/shiphover.png" class="ring" id="ring1">
+    </div>
+    <div id="ship02" class="ship" onclick="choose_ship02()"><img src="assets_customized/ship02.png" class="ship_img">
+        <img src="assets_customized/shiphover.png" class="ring" id="ring2">
+    </div>
+    <div id="ship03" class="ship" onclick="choose_ship03()"><img src="assets_customized/ship03.png" class="ship_img">
+        <img src="assets_customized/shiphover.png" class="ring" id="ring3">
+    </div>
+    <div id="ship04" class="ship" onclick="choose_ship04()"><img src="assets_customized/ship04.png" class="ship_img">
+        <img src="assets_customized/shiphover.png" class="ring" id="ring4">
+    </div>
+</div>
+
+<div id="ship_name">
+    <input type="text" placeholder="Name your ship" id="input_name" class="center">
+</div>
+
+<div id="choose">
+    <a href="levels.html"><img src="assets_customized/chooseButton.png" id="choose_button"></a>
+</div>
+
+<script src="script_character.js"></script>
+</body>
+</html>

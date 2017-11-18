@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Halite Junior</title>
+    <link rel = "stylesheet" type = "text/css" href = "style_character.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+
+#popup6{
+    height: 150px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(209,211,212);
+    margin-left:0px;
+}
+
+#div4,#div5,#div6{
+    padding: 0px;
+    border-radius: 90px;
+    display: inline-block;
+    border-color: black;
+    height:90px;
+    width:90px;
+    margin-left:30px; margin-top:0px;
+    position:absolute;
+
+}
+
+#div1{
+
+    padding: 0px;
+    border-radius: 90px;
+    display: inline-block;
+    border-color: black;
+    background-size: 100% 100%;
+    background-image: url("level1/1.png");
+    height:90px;
+    width:90px;
+    margin-top:10px;
+    /*position:absolute;*/
+}
+
+#div2{
+
+    padding: 0px;
+    border-radius: 90px;
+    display: inline-block;
+    border-color: black;
+    background-size: 100% 100%;
+    background-image: url("level1/2.png");
+    height:90px;
+    width:90px;
+    /*position:absolute;*/
+    margin-top:10px;
+}
+
+#div3{
+
+    padding: 0px;
+    border-radius: 90px;
+    display: inline-block;
+    border-color: black;
+    background-size: 100% 100%;
+    background-image: url("level1/3.png");
+    height:90px;
+    width:90px;
+
+    /*position:absolute;*/
+    margin-top:10px;
+}
+</style>
+    <script>
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+</script>
+</head>
+
+
+<body background="assets/spacebg.png" style="background-size: 100%">
+<div id="header">
+    <h1><img src="assets/halitejr.png" style="height:40px"></h1>
+    <div id="modes">
+        <div class="mode" id="practice" style="margin-right:37px">PRACTICE FIELD</div>
+        <div class="mode" id="combat">COMBAT</div>
+        <div class="mode" id="campaign">PILOT MISSIONS</div>
+    </div>
+    <div id="line" style="margin-top: 12vh; margin-bottom: 0 ; margin-left: 5vw; margin-right: 3vw; border-top: 1px solid #FFD800"></div>
+</div>
+
+
+
+
+
+<div id="popup6" style="display:inline;">
+
+    <div id="div0" style="margin-left:20px;margin-top:45px;float:left;">
+        <img id="button" src="assets/setting_icon02.png" style="display:inline-block;">
+    </div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin-left:50px;margin-top:25px;height:90px;float:left;">
+
+    </div>
+
+
+    <div style="margin-top:50px;display:inline-block;float:left;">
+        <img id="line1" src="level1/arrow-black.png" style="display:inline-block;">
+    </div>
+
+
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin-left:0px;margin-top:25px;height:90px;float:left;">
+
+    </div>
+
+
+    <a style="margin-top:50px;float:left;">
+        <img id="line2" src="level1/arrow-black.png" >
+    </a>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin-left:0px;margin-top:25px;height:90px;float:left;">
+
+    </div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin-left:80px;margin-top:25px;height:90px;float:left;">
+        <img id="drag1" src="level1/planet1drag.png" draggable="true" ondragstart="drag(event)" style="margin-left:0px; margin-top:0px">
+    </div>
+
+    <div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin-left:220px;margin-top:25px;height:90px;float:left;">
+        <img id="drag2" src="level1/planet2drag.png" draggable="true" ondragstart="drag(event)" style="margin-left:-20px; margin-top:0px">
+    </div>
+
+     <div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin-left:360px;margin-top:25px;height:90px;float:left;">
+        <img id="drag3" src="level1/planet3drag.png" draggable="true" ondragstart="drag(event)" style="margin-left:-20px; margin-top:0px">
+    </div>
+
+    <div id="div7" style="margin-left:540px;margin-top:50px;float:left;">
+        <img id="nike" src="assets_customized/valid_icon.png" style="display:inline-block;">
+    </div>
+
+</div>
+
+
+</body>
+</html>

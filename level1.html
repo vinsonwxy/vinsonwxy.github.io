@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Halite Junior</title>
+    <link rel = "stylesheet" type = "text/css" href = "style_level1.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            border-radius: 6px;
+            padding: 5px 0;
+
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+            top: -100px;
+            left: 0px;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+
+        #popup6{
+            height: 150px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: rgb(209,211,212);
+            margin-left:0px;
+            display: none;
+        }
+
+        #div4,#div5,#div6{
+            padding: 0px;
+            border-radius: 90px;
+            display: inline-block;
+            border-color: black;
+            height:90px;
+            width:90px;
+            margin-left:30px; margin-top:0px;
+            position:absolute;
+
+        }
+
+        #div1{
+
+            padding: 0px;
+            border-radius: 90px;
+            display: inline-block;
+            border-color: black;
+            background-size: 100% 100%;
+            background-image: url("level1/1.png");
+            height:90px;
+            width:90px;
+            margin-top:10px;
+            /*position:absolute;*/
+        }
+
+        #div2{
+
+            padding: 0px;
+            border-radius: 90px;
+            display: inline-block;
+            border-color: black;
+            background-size: 100% 100%;
+            background-image: url("level1/2.png");
+            height:90px;
+            width:90px;
+            /*position:absolute;*/
+            margin-top:10px;
+        }
+
+        #div3{
+
+            padding: 0px;
+            border-radius: 90px;
+            display: inline-block;
+            border-color: black;
+            background-size: 100% 100%;
+            background-image: url("level1/3.png");
+            height:90px;
+            width:90px;
+
+            /*position:absolute;*/
+            margin-top:10px;
+        }
+    </style>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+
+</head>
+
+
+<body background="assets/spacebg.png" style="background-size: 100%">
+
+
+<div id="container">
+
+
+    <div class = "open_nav_bar" onclick="openNav()">
+        <div class="tooltip"><img src="assets/setting_icon01.png" id="nav">
+            <span class="tooltiptext"><img src="level1/instruction-hover.png"></span>
+        </div>
+    </div>
+
+    <h1><img src="assets/halitejr.png" style="height:40px"></h1>
+    <div id="modes">
+        <div class="mode" id="practice" style="margin-right:37px">PRACTICE FIELD</div>
+        <div class="mode" id="combat">COMBAT</div>
+        <div class="mode" id="campaign">PILOT MISSIONS</div>
+    </div>
+    <div id="line" style="margin-top: 12vh; margin-bottom: 0 ; margin-left: 5vw; margin-right: 3vw; border-top: 1px solid #FFD800"></div>
+    <div id="status">
+
+        <div id="life-engine" style="width: 100px; float:left">
+            <div id="shipname"><img src="level1/shipname.png" style="margin-left: 5vw; margin-top: 1vw"></div>
+            <div id="life"><img src="level1/life3.png" alt="Life" style="margin-left:5vw; margin-top: 1vw"></div>
+        </div>
+
+
+        <div id="upgrade-icon"></div>
+
+        <div class="text" id="mission" style="margin-right:50px;float:right">MISSION 001</div>
+
+    </div>
+
+    <div id="ships">
+        <div id="ship">
+            <img src="assets/ship01.png" onclick="myMove()" id = "mother_ship" class = "ball" alt="Ship">
+        </div>
+    </div>
+
+
+
+    <div id="planets">
+        <img id="planet1" src="level1/planet1heart.png" style="margin-left:20px; margin-bottom:340px">
+        <img id="planet2" src="level1/planet2heart.png" style="margin-left:80px; margin-bottom:30px">
+        <img id="planet3" src="level1/planet3heart.png" style="margin-left:100px; margin-bottom:260px">
+    </div>
+</div>
+
+<div id="task-box">
+    <img id = "task" src="level1/mission1-task.png" onclick="beginMission()">
+</div>
+
+<div>
+    <img id="instruction2" src="level1/instruction.png" style="display:none;position:absolute;left:0;top:500px">
+</div>
+
+<div id="popup6">
+
+    <div id="div0" style="margin-left:40px;margin-top:47px;float:left;" onclick="closeNav()">
+        <img id="button" src="assets/setting_icon02.png" style="display:inline-block;">
+    </div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin-left:45px;margin-top:25px;height:90px;float:left;">
+
+    </div>
+
+
+    <div style="margin-top:50px;display:inline-block;float:left;">
+        <img id="line1" src="level1/arrow-black.png" style="display:inline-block;">
+    </div>
+
+
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin-left:0px;margin-top:25px;height:90px;float:left;">
+
+    </div>
+
+
+    <a style="margin-top:50px;float:left;">
+        <img id="line2" src="level1/arrow-black.png" >
+    </a>
+
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin-left:0px;margin-top:25px;height:90px;float:left;">
+
+    </div>
+
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin-left:80px;margin-top:25px;height:90px;float:left;">
+        <img id="drag1" src="level1/planet1drag.png" draggable="true" ondragstart="drag(event)" style="margin-left:0px; margin-top:0px">
+    </div>
+
+    <div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin-left:220px;margin-top:25px;height:90px;float:left;">
+        <img id="drag2" src="level1/planet2drag.png" draggable="true" ondragstart="drag(event)" style="margin-left:-20px; margin-top:0px">
+    </div>
+
+    <div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)" style="margin-left:360px;margin-top:25px;height:90px;float:left;">
+        <img id="drag3" src="level1/planet3drag.png" draggable="true" ondragstart="drag(event)" style="margin-left:-20px; margin-top:0px">
+    </div>
+
+    <div id="div7" style="margin-left:540px;margin-top:50px;float:left;">
+        <img id="nike" src="assets_customized/valid_icon.png" style="display:inline-block;">
+    </div>
+
+</div>
+
+<div id="ending" onclick="reload()">
+
+</div>
+<script src="script_level1.js"></script>
+
+</body>
+</html>
